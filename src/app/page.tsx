@@ -8,6 +8,8 @@ const mockUrls = [
   "https://utfs.io/f/44c48791-977f-4699-ae4b-53094c40a5d0-fsf3yp.avif",
 ];
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const postData = await db.query.posts.findMany();
 
