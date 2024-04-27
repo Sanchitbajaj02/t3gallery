@@ -10,7 +10,7 @@ gallery application created referencing Theo's application development stack: [v
 - [x] Scaffold basic ui with mock data
 - [x] Tidy up build process
 - [x] Actually set up a database (vercel postgres)
-- [ ] Attach database to UI
+- [x] Attach database to UI
 - [ ] Add authentication (w/ clerk)
 - [ ] Add image upload
 - [ ] "taint" (server-only)
