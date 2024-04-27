@@ -12,21 +12,14 @@ async function ImageComponent() {
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-4">
-      {[...imagesData, ...imagesData, ...imagesData, ...imagesData].map(
-        (image, ind: number) => {
-          return (
-            <div key={ind} className="flex w-56 flex-col items-center">
-              <Image
-                src={image.url}
-                alt={image.name}
-                width={500}
-                height={360}
-              />
-              <p className="text-base">{image.name}</p>
-            </div>
-          );
-        },
-      )}
+      {imagesData.map((image, ind: number) => {
+        return (
+          <div key={ind} className="flex w-56 flex-col items-center">
+            <Image src={image.url} alt={image.name} width={500} height={360} />
+            <p className="text-base">{image.name}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
