@@ -1,10 +1,18 @@
-import React from 'react'
+import React from "react";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 export default function TopNavbar() {
   return (
-    <nav className='flex w-full items-center justify-between p-4 text-xl font-semibold border-b'>
+    <nav className="flex w-full items-center justify-between border-b p-4 text-xl font-semibold">
       <div>Gallery</div>
-      <div>Sign in</div>
+      <div>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+      </div>
     </nav>
-  )
+  );
 }
