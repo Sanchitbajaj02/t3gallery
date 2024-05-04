@@ -1,4 +1,4 @@
-// import Link from "next/link";
+import Link from "next/link";
 import Image from "next/image";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { getMyImages } from "~/server/queries/index";
@@ -13,14 +13,16 @@ async function ImageComponent() {
       {imagesData.map((image, ind: number) => {
         return (
           <div key={ind} className="flex w-64 flex-col items-center">
-            <Image
-              src={image.url}
-              alt={image.name}
-              width={256}
-              height={256}
-              style={{ objectFit: "contain" }}
-              loading="lazy"
-            />
+            <Link href={`/img/${image.id}`}>
+              <Image
+                src={image.url}
+                alt={image.name}
+                width={256}
+                height={256}
+                style={{ objectFit: "contain" }}
+                loading="lazy"
+              />
+            </Link>
             <p className="text-base">{image.name}</p>
           </div>
         );
