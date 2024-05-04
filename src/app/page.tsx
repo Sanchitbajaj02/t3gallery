@@ -12,8 +12,15 @@ async function ImageComponent() {
     <div className="flex flex-wrap items-center justify-center gap-4">
       {imagesData.map((image, ind: number) => {
         return (
-          <div key={ind} className="flex w-56 flex-col items-center">
-            <Image src={image.url} alt={image.name} width={500} height={360} />
+          <div key={ind} className="flex w-64 flex-col items-center">
+            <Image
+              src={image.url}
+              alt={image.name}
+              width={256}
+              height={256}
+              style={{ objectFit: "contain" }}
+              loading="lazy"
+            />
             <p className="text-base">{image.name}</p>
           </div>
         );
