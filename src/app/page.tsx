@@ -9,10 +9,10 @@ async function ImageComponent() {
   const imagesData = await getMyImages();
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-4">
-      {imagesData.map((image, ind: number) => {
+    <div className="flex flex-wrap items-center justify-center gap-4 p-4">
+      {[...imagesData,...imagesData,...imagesData,...imagesData].map((image, ind: number) => {
         return (
-          <div key={ind} className="flex w-64 flex-col items-center">
+          <div key={ind} className="flex w-56 h-48 flex-col items-center">
             <Link href={`/img/${image.id}`}>
               <Image
                 src={image.url}
