@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { getSingleImage } from "~/server/queries";
+import ImageComponent from "~/components/core/imageComponent";
+import { Modal } from "./modal";
 
-export default async function PhotoModal({
+export default function PhotoModal({
   params: { id: photoId },
 }: {
   params: { id: string };
@@ -9,13 +9,11 @@ export default async function PhotoModal({
   const idAsNumber = Number(photoId);
   if (Number.isNaN(idAsNumber)) throw new Error("Invalid photo id");
 
-  const image = await getSingleImage(idAsNumber);
-
   return (
     <>
-      <div className="mt-8 flex justify-center">
-        <Image src={image.url} width={500} height={500} alt={image.name} />
-      </div>
+      <Modal>
+        <ImageComponent photoId={idAsNumber} />
+      </Modal>
     </>
   );
 }
