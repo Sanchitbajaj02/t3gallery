@@ -1,4 +1,4 @@
-import ImageComponent from "~/components/core/imageComponent";
+import SingleCardImage from "~/components/core/singleCardImage";
 import { Modal } from "./modal";
 
 export default function PhotoModal({
@@ -12,7 +12,7 @@ export default function PhotoModal({
   return (
     <>
       <Modal>
-        <ImageComponent photoId={idAsNumber} />
+        <SingleCardImage photoId={idAsNumber} />
       </Modal>
     </>
   );

@@ -1,4 +1,4 @@
-import ImageComponent from "~/components/core/imageComponent";
+import SingleCardImage from "~/components/core/singleCardImage";
 
 export default function PhotoPage({
   params: { id: photoId },
@@ -11,7 +11,7 @@ export default function PhotoPage({
   return (
     <>
       <div className="my-4 flex items-center justify-center">
-        <ImageComponent photoId={idAsNumber} />
+        <SingleCardImage photoId={idAsNumber} />
       </div>
     </>
   );
