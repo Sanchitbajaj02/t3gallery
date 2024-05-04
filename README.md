@@ -16,7 +16,8 @@ gallery application created referencing Theo's application development stack: [v
 - [x] "taint" (server-only)
 - [x] Use Next/Image component
 - [x] Routing/image page (parallel route)
-- [ ] Update upload button to be less cringe
+- [x] Update upload button to be less cringe
+- [x] ShadUIify (specifically toasts)
 - [ ] Analytics (posthog)
 - [ ] Delete button (w/ Server Actions)
 - [ ] Ratelimiting (upstash)
