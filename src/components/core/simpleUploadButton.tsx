@@ -61,7 +61,7 @@ export default function SimpleUploadButton() {
   });
 
   return (
-    <>
+    <div className="rounded-md bg-white p-1 text-black hover:bg-gray-100">
       <label
         htmlFor="upload-button"
         className="cursor-pointer"
@@ -76,6 +76,6 @@ export default function SimpleUploadButton() {
         className="sr-only"
         {...inputProps}
       />
-    </>
+    </div>
   );
 }
