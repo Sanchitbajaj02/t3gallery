@@ -13,14 +13,14 @@ gallery application created referencing Theo's application development stack: [v
 - [x] Attach database to UI
 - [x] Add authentication (w/ clerk)
 - [x] Add image upload
-- [x] "taint" (server-only)
+- [x] "taint" (server-only) 
 - [x] Use Next/Image component
 - [x] Routing/image page (parallel route)
 - [x] Update upload button to be less cringe
 - [x] ShadUIify (specifically toasts)
 - [x] Analytics (posthog)
 - [x] Delete button (w/ Server Actions)
-- [ ] Ratelimiting (upstash)
+- [x] Ratelimiting (upstash)
 
 ## A challenge to the viewer
 
