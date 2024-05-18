@@ -10,9 +10,9 @@ async function ImageComponent() {
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-4 p-4">
-      {[...imagesData,...imagesData,...imagesData,...imagesData].map((image, ind: number) => {
+      {imagesData.map((image, ind: number) => {
         return (
-          <div key={ind} className="flex w-56 h-48 flex-col items-center">
+          <div key={ind} className="flex h-48 w-56 flex-col items-center">
             <Link href={`/img/${image.id}`}>
               <Image
                 src={image.url}

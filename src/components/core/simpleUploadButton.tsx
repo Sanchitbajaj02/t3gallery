@@ -4,6 +4,7 @@ import { useUploadThing } from "~/utils/uploadthing";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import {Upload} from "lucide-react"
+import { usePostHog } from "posthog-js/react";
 // inferred input off useUploadThing
 type Input = Parameters<typeof useUploadThing>;
 
@@ -31,25 +32,6 @@ const useUploadThingInputProps = (...args: Input) => {
   };
 };
 
-function UploadSVG() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="2"
-      stroke="currentColor"
-      className="h-5 w-5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
-      />
-    </svg>
-  );
-}
-
 function LoadingSpinnerSVG() {
   return (
     <svg
@@ -73,8 +55,12 @@ function LoadingSpinnerSVG() {
 
 export default function SimpleUploadButton() {
   const router = useRouter();
+
+  const posthog = usePostHog( )
+
   const { inputProps } = useUploadThingInputProps("imageUploader", {
     onUploadBegin: () => {
+      posthog.capture("upload_begin")
       toast(
         <div className="flex items-center gap-2 text-white">
           <LoadingSpinnerSVG /> <span className="text-lg">Uploading...</span>
