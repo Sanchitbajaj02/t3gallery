@@ -1,6 +1,7 @@
 import { clerkClient } from "@clerk/nextjs/server";
 import React from "react";
-import { getSingleImage } from "~/server/queries";
+import { deleteImage, getSingleImage } from "~/server/queries";
+import { Button } from "~/components/ui/button";
 
 export default async function SingleCardImage({
   photoId,
@@ -10,6 +11,12 @@ export default async function SingleCardImage({
   const image = await getSingleImage(photoId);
 
   const uploadUserInfo = await clerkClient.users.getUser(image.userId);
+
+  const formAction = async ( ) => {
+    "use server";
+
+    await deleteImage(photoId);
+  };
 
   return (
     <>
@@ -24,14 +31,24 @@ export default async function SingleCardImage({
           </p>
           <div className="flex flex-col p-2">
             <span className="text-base font-medium">Uploaded by</span>
-            <span className="text-base font-medium">{uploadUserInfo.fullName}</span>
+            <span className="text-base font-medium">
+              {uploadUserInfo.fullName}
+            </span>
           </div>
 
           <div className="flex flex-col p-2">
             <span className="text-base font-medium">Created On</span>
             <span className="text-base font-medium">
-              {new Date(uploadUserInfo.createdAt).toLocaleDateString('en-GB')}
+              {new Date(uploadUserInfo.createdAt).toLocaleDateString("en-GB")}
             </span>
+          </div>
+
+          <div className="p-2">
+            <form action={formAction}>
+              <Button variant="destructive" type="submit">
+                Delete
+              </Button>
+            </form>
           </div>
         </article>
       </section>
