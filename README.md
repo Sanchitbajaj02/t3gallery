@@ -28,3 +28,16 @@ gallery application created referencing Theo's application development stack: [v
 - "Selecting" images on the gallery page
 - "infinite scroll"
 - Folders/albums
+
+
+## Services Used
+
+- [Clerk](https://clerk.com/)
+- [Vercel Postgres](https://vercel.com/docs/storage/vercel-postgres)
+- [Uploadthing](https://uploadthing.com/)
+- [Posthog](https://posthog.com/)
+- [Upstash](https://upstash.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Shadcn](https://ui.shadcn.com/)
+- [Drizzle](https://orm.drizzle.team/)
+- [Zod](https://zod.dev/)
